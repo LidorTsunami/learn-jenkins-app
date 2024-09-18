@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Check Docker') {
+            steps {
+                sh 'docker info'
+            }
+        }
         stage('Build') {
             agent {
                 docker {
